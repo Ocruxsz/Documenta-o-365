@@ -1,0 +1,1437 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚀 Documentações para o dia a dia | Portal de Links</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #ec4899;
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --bg-card-hover: #334155;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent-blue: #3b82f6;
+            --accent-green: #10b981;
+            --accent-orange: #f59e0b;
+            --accent-purple: #8b5cf6;
+            --accent-red: #ef4444;
+            --accent-cyan: #06b6d4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, var(--bg-dark) 0%, #1a1a2e 50%, #16213e 100%);
+            min-height: 100vh;
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding: 1.5rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .logo-text h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .logo-text span {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        /* Search */
+        .search-container {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 0.75rem 1rem 0.75rem 3rem;
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-secondary);
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(30, 41, 59, 0.5);
+            padding: 1rem;
+            position: sticky;
+            top: 80px;
+            z-index: 99;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-links {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .nav-link {
+            padding: 0.5rem 1rem;
+            background: var(--bg-card);
+            border-radius: 8px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .nav-link:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Category Section */
+        .category-section {
+            margin-bottom: 3rem;
+            animation: fadeInUp 0.5s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid rgba(255,255,255,0.1);
+        }
+
+        .category-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .category-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .category-count {
+            background: rgba(255,255,255,0.1);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        /* Links Grid */
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1rem;
+        }
+
+        .link-card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .link-card:hover {
+            background: var(--bg-card-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border-color: var(--primary);
+        }
+
+        .link-favicon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+
+        .link-favicon img {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+        }
+
+        .link-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .link-title {
+            font-weight: 500;
+            font-size: 0.95rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-bottom: 0.25rem;
+        }
+
+        .link-url {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .link-arrow {
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+        }
+
+        .link-card:hover .link-arrow {
+            color: var(--primary);
+            transform: translateX(5px);
+        }
+
+        /* Subcategory */
+        .subcategory {
+            margin-top: 1.5rem;
+            padding-left: 1rem;
+            border-left: 3px solid rgba(255,255,255,0.1);
+        }
+
+        .subcategory-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Color variants for categories */
+        .cat-advanced .category-icon { background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan)); }
+        .cat-microsoft .category-icon { background: linear-gradient(135deg, #00a4ef, #7fba00); }
+        .cat-outros .category-icon { background: linear-gradient(135deg, var(--accent-purple), var(--accent-orange)); }
+        .cat-tools .category-icon { background: linear-gradient(135deg, var(--accent-green), var(--accent-cyan)); }
+        .cat-migration .category-icon { background: linear-gradient(135deg, var(--accent-red), var(--accent-orange)); }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 3rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .search-container {
+                max-width: 100%;
+            }
+
+            .links-grid {
+                grid-template-columns: 1fr;
+            }
+
+            main {
+                padding: 1rem;
+            }
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-dark);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--bg-card);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary);
+        }
+
+        /* Hidden class for search */
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon">📁</div>
+                <div class="logo-text">
+                    <h1>Documentações 365</h1>
+                    <span>Portal de Links Rápidos</span>
+                </div>
+            </div>
+            <div class="search-container">
+                <span class="search-icon">🔍</span>
+                <input type="text" class="search-input" id="searchInput" placeholder="Buscar links...">
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="nav-links">
+            <a href="#advanced" class="nav-link">🏢 Advanced</a>
+            <a href="#microsoft365" class="nav-link">☁️ Microsoft 365</a>
+            <a href="#outros-microsoft" class="nav-link">🔧 Outros Microsoft</a>
+            <a href="#tools" class="nav-link">🛠️ Ferramentas</a>
+            <a href="#migration" class="nav-link">🚀 Migração</a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Advanced Section -->
+        <section id="advanced" class="category-section cat-advanced">
+            <div class="category-header">
+                <div class="category-icon">🏢</div>
+                <h2 class="category-title">Advanced</h2>
+                <span class="category-count">16 links</span>
+            </div>
+            <div class="links-grid">
+                <a href="https://advanced.movidesk.com/Account/Login?ReturnUrl=%2fHome" class="link-card" target="_blank">
+                    <div class="link-favicon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB/0lEQVR4nKSTS2gTQRjHv3nsI9vaFhuD4sG2lIrk5EEQBI3HlqhY6MGg2EsPHjwpvRhxsBchIIgXScAH4ikEkaqIpxyEtFchRRAvOQhiCG032exmH5+zi4Fq0/T1v8ww/Oc3/2/mGw57UColeDiWj1QRikU/nBM4oPguPOEhOD55Wxs/mpjFAAcZ0B8fX2VLPQEoBC1Wq2QlmcQHQkA6MfyMcnWWMA6uay9JS6lD31GnMwsP+xR6n7hOu19TOBLy+dPz7OSWBCiBkoi1+bnLRsyYcdpua9WnQ0vNRtpg1P7twfd3G4MnVAZ67zsgzGGEXueMwWGKcHXIBoVgrWYGc2+x/z0FzjpW+s++KASQn5ZZWWvZtabrebbntZvI11uOfyX5JL+sUTACgKAroFPJ2adv1gklDZ0zqlJGue9kErnC16kb2cdIuAJIvW4lRM91fubuKOPqGQMaq5oao/UN89ZYLv9h6ubCohLrS6NjSSf63RKE8ZkWO/Ra4yyjMXK83rJzcnP+0rU7cR+Cl5ZpTge+Z8le4P8nILJR1IlE/IWnD5w75f/6hr63OPaoMB/2AxGiLj2lkZGUPnHhokIJMTYDouijw/FpwpSTQduqKAyXByqFexFZCIycEnSssmbIu/kim2llc92R5EfRy2Xh/F0LYHtFB24B7Fe7+Uw99QcAAP//Aa4ymQAAAAZJREFUAwAkcbnb6AdPzQAAAABJRU5ErkJggg==" alt=""></div>
+                    <div class="link-info">
+                        <div class="link-title">Movidesk - Central de Serviços</div>
+                        <div class="link-url">advanced.movidesk.com</div>
+                    </div>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="https://partner.microsoft.com/dashboard/v2/customers/list" class="link-card" target="_blank">
+                    <div class="link-favicon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAVElEQVR4nOySoRHAIBAE72beRKaBlJO4VEAvDL1QAQ7KoQEkEip49QgEa29mza30/xlQuFKlL1D38IICI0ewQEAYEcSm/gx3c2S9A36ngz0E5g4mAAAA//9QPuR6AAAABklEQVQDAPCvDTvmhfD9AAAAAElFTkSuQmCC" alt=""></div>
+                    <div class="link-info">
+                        <div class="link-title">Microsoft Partner Center</div>
+                        <div class="link-url">partner.microsoft.com</div>
+                    </div>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="https://consumer.hotmart.com/main" class="link-card" target="_blank">
+                    <div class="link-favicon">🎓</div>
+                    <div class="link-info">
+                        <div class="link-title">Hotmart - Minhas Compras</div>
+                        <div class="link-url">consumer.hotmart.com</div>
+                    </div>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="https://plataforma.advancedinfo.com.br/home/index" class="link-card" target="_blank">
+                    <div class="link-favicon">☁️</div>
+                    <div class="link-info">
+                        <div class="link-title">Advanced - Portal Cloud</div>
+                        <div class="link-url">plataforma.advancedinfo.com.br</div>
+                    </div>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="https://testconnectivity.microsoft.com/tests" class="link-card" target="_blank">
+                    <div class="link-favicon">🔌</div>
+                    <div class="link-info">
+                        <div class="link-title">Microsoft Remote Connectivity Analyzer</div>
+                        <div class="link-url">testconnectivity.microsoft.com</div>
+                    </div>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="https://partners.acronis.training/learn/learning-plans/203/pt-acronis-cyberfit-cloud-tech-fundamentals" class="link-card" target="_blank">
+                    <div class="link-favicon">📚</div>
+                    <div class="link-info">
+                        <div class="link-title">Acronis Academy</div>
+                        <div class="link-url">partners.acronis.training</div>
+                    </div>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="https://app.ahgora.com.br/novabatidaonline/" class="link-card" target="_blank">
+                    <div class="link-favicon">⏰</div>
+                    <div class="link-info">
+                        <div class="link-title">Batida Online - Ahgora</div>
+                        <div class="link-url">app.ahgora.com.br</div>
+                    </div>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="https://app.ahgora.com.br/externo/mirror" class="link-card" target="_blank">
+                    <div class="link-favicon">🪞</div>
+                    <div class="link-info">
+                        <div class="link-title">Ahgora Mirror</div>
+                        <div class="link-url">app.ahgora.com.br</div>
+                    </div>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="https://advinfo.crm2.dynamics.com/main.aspx?pagetype=search" class="link-card" target="_blank">
+                    <div class="link-favicon">🔍</div>
+                    <div class="link-info">
+                        <div class="link-title">Dynamics CRM - Pesquisa</div>
+                        <div class="link-url">advinfo.crm2.dynamics.com</div>
+                    </div>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="https://chat.movidesk.com/ChatWidgetNewNew/Landing/A7643E17A953465BB789F7B62F95D793" class="link-card" target="_blank">
+                    <div class="link-favicon">💬</div>
+                    <div class="link-info">
+                        <div class="link-title">Movidesk Chat</div>
+                        <div class="link-url">chat.movidesk.com</div>
+                    </div>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="https://advanced.cloudcockpit.com/Login" class="link-card" target="_blank">
+                    <div class="link-favicon">🚀</div>
+                    <div class="link-info">
+                        <div class="link-title">Cloud Cockpit - Advanced Portal</div>
+                        <div class="link-url">advanced.cloudcockpit.com</div>
+                    </div>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="https://advancedinformatica-my.sharepoint.com/personal/diego_carvalho_advancedinfo_com_br/Lists/GDAPs/AllItems.aspx" class="link-card" target="_blank">
+                    <div class="link-favicon">📋</div>
+                    <div class="link-info">
+                        <div class="link-title">GDAPs - Diego Carvalho</div>
+                        <div class="link-url">advancedinformatica-my.sharepoint.com</div>
+                    </div>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="https://consultanumero.abrtelecom.com.br/consultanumero/consulta/consultaSituacaoAtualCtg" class="link-card" target="_blank">
+                    <div class="link-favicon">📞</div>
+                    <div class="link-info">
+                        <div class="link-title">Consulta Número - ABR Telecom</div>
+                        <div class="link-url">consultanumero.abrtelecom.com.br</div>
+                    </div>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="https://csp.advancedinfo.com.br/Login" class="link-card" target="_blank">
+                    <div class="link-favicon">🔐</div>
+                    <div class="link-info">
+                        <div class="link-title">CloudCockpit CSP</div>
+                        <div class="link-url">csp.advancedinfo.com.br</div>
+                    </div>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="https://www.dimepkairos.com.br/Dimep/Account/LogOn" class="link-card" target="_blank">
+                    <div class="link-favicon">⏱️</div>
+                    <div class="link-info">
+                        <div class="link-title">Kairos - Dimep</div>
+                        <div class="link-url">dimepkairos.com.br</div>
+                    </div>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="https://docs.google.com/spreadsheets/d/1nT31neZBgX0JsSbGDRXcBlPFfb6HnVMkrgk_S5cRzVo/edit" class="link-card" target="_blank">
+                    <div class="link-favicon">📊</div>
+                    <div class="link-info">
+                        <div class="link-title">Orçamento Mensal</div>
+                        <div class="link-url">docs.google.com</div>
+                    </div>
+                    <span class="link-arrow">→</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Microsoft 365 Section -->
+        <section id="microsoft365" class="category-section cat-microsoft">
+            <div class="category-header">
+                <div class="category-icon">☁️</div>
+                <h2 class="category-title">Microsoft 365</h2>
+                <span class="category-count">35+ links</span>
+            </div>
+
+            <!-- OneDrive -->
+            <div class="subcategory">
+                <h3 class="subcategory-title">📁 OneDrive</h3>
+                <div class="links-grid">
+                    <a href="https://support.microsoft.com/pt-br/office/redefinir-o-onedrive-34701e00-bf7b-42db-b960-84905399050c" class="link-card" target="_blank">
+                        <div class="link-favicon">🔄</div>
+                        <div class="link-info">
+                            <div class="link-title">Redefinir o OneDrive</div>
+                            <div class="link-url">support.microsoft.com</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                    <a href="https://support.microsoft.com/pt-br/office/desinstalar-o-office-de-um-computador-9dd49b83-264a-477a-8fcc-2fdf5dbf61d8" class="link-card" target="_blank">
+                        <div class="link-favicon">🗑️</div>
+                        <div class="link-info">
+                            <div class="link-title">Desinstalar o Office</div>
+                            <div class="link-url">support.microsoft.com</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Power Automate -->
+            <div class="subcategory">
+                <h3 class="subcategory-title">⚡ Power Automate</h3>
+                <div class="links-grid">
+                    <a href="https://www.youtube.com/watch?v=4FO28aqBYrY" class="link-card" target="_blank">
+                        <div class="link-favicon">📺</div>
+                        <div class="link-info">
+                            <div class="link-title">Receive a Teams Notification for a New Email Received</div>
+                            <div class="link-url">youtube.com</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                    <a href="https://learn.microsoft.com/pt-br/power-automate/teams/approvals-custom-connector" class="link-card" target="_blank">
+                        <div class="link-favicon">📖</div>
+                        <div class="link-info">
+                            <div class="link-title">Criar um conector personalizado para um fluxo de aprovação</div>
+                            <div class="link-url">learn.microsoft.com</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Teams -->
+            <div class="subcategory">
+                <h3 class="subcategory-title">💬 Teams</h3>
+                <div class="links-grid">
+                    <a href="https://support.microsoft.com/pt-br/office/gerenciar-notifica%C3%A7%C3%B5es-no-microsoft-teams-1cc31834-5fe5-412b-8edb-43fecc78413d" class="link-card" target="_blank">
+                        <div class="link-favicon">🔔</div>
+                        <div class="link-info">
+                            <div class="link-title">Gerir notificações no Microsoft Teams</div>
+                            <div class="link-url">support.microsoft.com</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                    <a href="https://support.microsoft.com/pt-br/office/adicionar-ou-convidar-pessoas-fora-de-sua-organiza%C3%A7%C3%A3o-para-um-chat-no-microsoft-teams-6897ab47-9f60-4db6-8b95-18599714fe57" class="link-card" target="_blank">
+                        <div class="link-favicon">👥</div>
+                        <div class="link-info">
+                            <div class="link-title">Adicionar ou convidar pessoas fora de sua organização para um chat no Teams</div>
+                            <div class="link-url">support.microsoft.com</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Entra ID -->
+            <div class="subcategory">
+                <h3 class="subcategory-title">🔐 Entra ID</h3>
+                <div class="links-grid">
+                    <a href="https://learn.microsoft.com/pt-br/entra/identity/hybrid/connect/tshoot-connect-sync-errors" class="link-card" target="_blank">
+                        <div class="link-favicon">🔧</div>
+                        <div class="link-info">
+                            <div class="link-title">Microsoft Entra Connect: Solução de problemas de erros durante a sincronização</div>
+                            <div class="link-url">learn.microsoft.com</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                    <a href="https://learn.microsoft.com/pt-br/entra/identity/conditional-access/concept-conditional-access-conditions" class="link-card" target="_blank">
+                        <div class="link-favicon">🛡️</div>
+                        <div class="link-info">
+                            <div class="link-title">Condições na política de acesso condicional</div>
+                            <div class="link-url">learn.microsoft.com</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                    <a href="https://learn.microsoft.com/pt-br/entra/identity/conditional-access/concept-conditional-access-policies" class="link-card" target="_blank">
+                        <div class="link-favicon">📋</div>
+                        <div class="link-info">
+                            <div class="link-title">Construindo uma política de acesso condicional</div>
+                            <div class="link-url">learn.microsoft.com</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                    <a href="https://learn.microsoft.com/pt-br/entra/identity/conditional-access/concept-assignment-network" class="link-card" target="_blank">
+                        <div class="link-favicon">🌐</div>
+                        <div class="link-info">
+                            <div class="link-title">Rede na política de Acesso Condicional</div>
+                            <div class="link-url">learn.microsoft.com</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Defender -->
+            <div class="subcategory">
+                <h3 class="subcategory-title">🛡️ Defender</h3>
+                <div class="links-grid">
+                    <a href="https://techcommunity.microsoft.com/blog/microsoftdefenderforoffice365blog/automatically-triage-phish-submissions-in-microsoft-defender-for-office-365/2733752" class="link-card" target="_blank">
+                        <div class="link-favicon">🎣</div>
+                        <div class="link-info">
+                            <div class="link-title">Automatically triage phish submissions in Microsoft Defender for Office 365</div>
+                            <div class="link-url">techcommunity.microsoft.com</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                    <a href="https://learn.microsoft.com/pt-br/defender-office-365/anti-phishing-policies-mdo-configure" class="link-card" target="_blank">
+                        <div class="link-favicon">⚙️</div>
+                        <div class="link-info">
+                            <div class="link-title">Configurar políticas anti-phishing no Microsoft Defender para Office 365</div>
+                            <div class="link-url">learn.microsoft.com</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                    <a href="https://learn.microsoft.com/pt-br/defender-office-365/anti-phishing-policies-about#spoof-settings" class="link-card" target="_blank">
+                        <div class="link-favicon">👻</div>
+                        <div class="link-info">
+                            <div class="link-title">Políticas anti-phishing - Spoof Settings</div>
+                            <div class="link-url">learn.microsoft.com</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                    <a href="https://learn.microsoft.com/pt-br/defender-xdr/configure-email-notifications" class="link-card" target="_blank">
+                        <div class="link-favicon">📧</div>
+                        <div class="link-info">
+                            <div class="link-title">Configurar notificações de alerta - Microsoft Defender XDR</div>
+                            <div class="link-url">learn.microsoft.com</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Exchange -->
+            <div class="subcategory">
+                <h3 class="subcategory-title">📧 Exchange</h3>
+                <div class="links-grid">
+                    <a href="https://learn.microsoft.com/pt-br/office365/servicedescriptions/exchange-online-service-description/exchange-online-limits" class="link-card" target="_blank">
+                        <div class="link-favicon">📏</div>
+                        <div class="link-info">
+                            <div class="link-title">Limites do Exchange Online - Service Descriptions</div>
+                            <div class="link-url">learn.microsoft.com</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                    <a href="https://learn.microsoft.com/pt-br/exchange/mail-flow-best-practices/how-to-set-up-a-multifunction-device-or-application-to-send-email-using-microsoft-365-or-office-365" class="link-card" target="_blank">
+                        <div class="link-favicon">🖨️</div>
+                        <div class="link-info">
+                            <div class="link-title">Como configurar uma aplicação ou dispositivo multifunções para enviar e-mails</div>
+                            <div class="link-url">learn.microsoft.com</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                    <a href="https://techcommunity.microsoft.com/blog/exchange/exchange-online-to-retire-basic-auth-for-client-submission-smtp-auth/4114750" class="link-card" target="_blank">
+                        <div class="link-favicon">🔒</div>
+                        <div class="link-info">
+                            <div class="link-title">Exchange Online desativará a autenticação básica para envio de cliente (SMTP AUTH)</div>
+                            <div class="link-url">techcommunity.microsoft.com</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Purview -->
+            <div class="subcategory">
+                <h3 class="subcategory-title">🔍 Purview</h3>
+                <div class="links-grid">
+                    <a href="https://learn.microsoft.com/en-us/purview/purview-portal" class="link-card" target="_blank">
+                        <div class="link-favicon">🏠</div>
+                        <div class="link-info">
+                            <div class="link-title">Learn about the Microsoft Purview portal</div>
+                            <div class="link-url">learn.microsoft.com</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                    <a href="https://learn.microsoft.com/en-us/purview/ediscovery-export-content" class="link-card" target="_blank">
+                        <div class="link-favicon">📤</div>
+                        <div class="link-info">
+                            <div class="link-title">Exportar e baixar conteúdo de um caso de Descoberta Eletrônica (Padrão)</div>
+                            <div class="link-url">learn.microsoft.com</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- SharePoint -->
+            <div class="subcategory">
+                <h3 class="subcategory-title">📂 SharePoint</h3>
+                <div class="links-grid">
+                    <a href="https://learn.microsoft.com/pt-br/sharepoint/manage-site-redirects" class="link-card" target="_blank">
+                        <div class="link-favicon">🔀</div>
+                        <div class="link-info">
+                            <div class="link-title">Gerenciar o redirecionamento de sites - SharePoint in Microsoft 365</div>
+                            <div class="link-url">learn.microsoft.com</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                    <a href="https://learn.microsoft.com/en-us/purview/retention-policies-sharepoint#how-retention-works-for-sharepoint-and-onedrive" class="link-card" target="_blank">
+                        <div class="link-favicon">📦</div>
+                        <div class="link-info">
+                            <div class="link-title">Saiba mais sobre a retenção para o SharePoint e o OneDrive</div>
+                            <div class="link-url">learn.microsoft.com</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Outlook -->
+            <div class="subcategory">
+                <h3 class="subcategory-title">📬 Outlook</h3>
+                <div class="links-grid">
+                    <a href="https://support.microsoft.com/pt-br/office/compartilhar-um-calend%C3%A1rio-do-outlook-com-outras-pessoas-353ed2c1-3ec5-449d-8c73-6931a0adab88" class="link-card" target="_blank">
+                        <div class="link-favicon">📅</div>
+                        <div class="link-info">
+                            <div class="link-title">Partilhar um calendário do Outlook como só de visualização com outras pessoas</div>
+                            <div class="link-url">support.microsoft.com</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- General M365 -->
+            <div class="subcategory">
+                <h3 class="subcategory-title">📚 Geral</h3>
+                <div class="links-grid">
+                    <a href="https://support.microsoft.com/pt-br/office/gerenciar-sua-assinatura-do-microsoft-365-ou-produto-do-office-959ac957-8d37-4ae4-b1b6-d6e4874e013f" class="link-card" target="_blank">
+                        <div class="link-favicon">💳</div>
+                        <div class="link-info">
+                            <div class="link-title">Gerir a sua subscrição do Microsoft 365 ou produto do Office</div>
+                            <div class="link-url">support.microsoft.com</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                    <a href="https://learn.microsoft.com/pt-br/microsoft-365/commerce/licenses/product-keys-for-vl" class="link-card" target="_blank">
+                        <div class="link-favicon">🔑</div>
+                        <div class="link-info">
+                            <div class="link-title">Localizar e utilizar chaves de produto para licenciamento em volume</div>
+                            <div class="link-url">learn.microsoft.com</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                    <a href="https://learn.microsoft.com/pt-br/microsoft-365/admin/get-help-with-domains/remove-a-domain" class="link-card" target="_blank">
+                        <div class="link-favicon">🌐</div>
+                        <div class="link-info">
+                            <div class="link-title">Excluir um domínio - Microsoft 365 admin</div>
+                            <div class="link-url">learn.microsoft.com</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                    <a href="https://learn.microsoft.com/pt-br/microsoft-365-apps/licensing-activation/vnextdiag" class="link-card" target="_blank">
+                        <div class="link-favicon">✅</div>
+                        <div class="link-info">
+                            <div class="link-title">Verifique a licença e a status de ativação para Microsoft 365 Apps</div>
+                            <div class="link-url">learn.microsoft.com</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Outros Microsoft Section -->
+        <section id="outros-microsoft" class="category-section cat-outros">
+            <div class="category-header">
+                <div class="category-icon">🔧</div>
+                <h2 class="category-title">Outros - Microsoft 365</h2>
+                <span class="category-count">40+ links</span>
+            </div>
+
+            <!-- Entra ID -->
+            <div class="subcategory">
+                <h3 class="subcategory-title">🔐 Entra ID</h3>
+                <div class="links-grid">
+                    <a href="https://lopes.cloud/microsoft-365/microsoft-365-force-ad-user-sync-with-entra-id" class="link-card" target="_blank">
+                        <div class="link-favicon">🔄</div>
+                        <div class="link-info">
+                            <div class="link-title">[MICROSOFT 365] - FORCE AD USER SYNC WITH ENTRA ID</div>
+                            <div class="link-url">lopes.cloud</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                    <a href="https://learn.microsoft.com/pt-br/entra/identity/authentication/howto-mfa-app-passwords" class="link-card" target="_blank">
+                        <div class="link-favicon">🔑</div>
+                        <div class="link-info">
+                            <div class="link-title">Configurar senhas de aplicativo para a autenticação multifator do Microsoft Entra</div>
+                            <div class="link-url">learn.microsoft.com</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=a3jc_O8HOPg" class="link-card" target="_blank">
+                        <div class="link-favicon">📺</div>
+                        <div class="link-info">
+                            <div class="link-title">Azure AD - Restringindo acesso ao Office 365 por região via conditional access</div>
+                            <div class="link-url">youtube.com</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Teams -->
+            <div class="subcategory">
+                <h3 class="subcategory-title">💬 Teams</h3>
+                <div class="links-grid">
+                    <a href="https://www.uvm.edu/it/kb/article/clearing-teams-cache/" class="link-card" target="_blank">
+                        <div class="link-favicon">🧹</div>
+                        <div class="link-info">
+                            <div class="link-title">Microsoft Teams – Limpando o cache do cliente do Teams</div>
+                            <div class="link-url">uvm.edu</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                    <a href="https://learn.microsoft.com/pt-br/microsoftteams/troubleshoot/teams-administration/clear-teams-cache" class="link-card" target="_blank">
+                        <div class="link-favicon">🗑️</div>
+                        <div class="link-info">
+                            <div class="link-title">Limpar o cache do Teams - Microsoft Teams</div>
+                            <div class="link-url">learn.microsoft.com</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                    <a href="https://learn.microsoft.com/pt-br/microsoftteams/troubleshoot/meetings/troubleshoot-meeting-recording-issues" class="link-card" target="_blank">
+                        <div class="link-favicon">🎥</div>
+                        <div class="link-info">
+                            <div class="link-title">Problemas que afetam gravações de reunião - Microsoft Teams</div>
+                            <div class="link-url">learn.microsoft.com</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Outlook -->
+            <div class="subcategory">
+                <h3 class="subcategory-title">📬 Outlook</h3>
+                <div class="links-grid">
+                    <a href="https://www.youtube.com/watch?v=b8zO9GdWtoM" class="link-card" target="_blank">
+                        <div class="link-favicon">📅</div>
+                        <div class="link-info">
+                            <div class="link-title">Como compartilhar agenda do Outlook com todos da empresa? Dica de Calendário aberto</div>
+                            <div class="link-url">youtube.com</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=lbQI_ifV7MA" class="link-card" target="_blank">
+                        <div class="link-favicon">📧</div>
+                        <div class="link-info">
+                            <div class="link-title">Enviando do alias no Microsoft 365</div>
+                            <div class="link-url">youtube.com</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                    <a href="https://o365info.com/create-distribution-group-powershell/" class="link-card" target="_blank">
+                        <div class="link-favicon">👥</div>
+                        <div class="link-info">
+                            <div class="link-title">How to Create Distribution Group with PowerShell - o365info</div>
+                            <div class="link-url">o365info.com</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- eDiscovery -->
+            <div class="subcategory">
+                <h3 class="subcategory-title">🔍 eDiscovery</h3>
+                <div class="links-grid">
+                    <a href="https://www.youtube.com/watch?v=IXhc6I-TD14" class="link-card" target="_blank">
+                        <div class="link-favicon">📤</div>
+                        <div class="link-info">
+                            <div class="link-title">Como Exportar E-mails para um PST dentro do Painel do Microsoft 365</div>
+                            <div class="link-url">youtube.com</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=NPv0jq8sFqI" class="link-card" target="_blank">
+                        <div class="link-favicon">📥</div>
+                        <div class="link-info">
+                            <div class="link-title">Como importar PST para o Microsoft 365 (Exchange Online)</div>
+                            <div class="link-url">youtube.com</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Intune -->
+            <div class="subcategory">
+                <h3 class="subcategory-title">📱 Intune</h3>
+                <div class="links-grid">
+                    <a href="https://www.prajwaldesai.com/disable-windows-hello-for-business-using-intune/" class="link-card" target="_blank">
+                        <div class="link-favicon">👋</div>
+                        <div class="link-info">
+                            <div class="link-title">Desabilitar o Windows Hello para Empresas usando o Intune - Guia Completo</div>
+                            <div class="link-url">prajwaldesai.com</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                    <a href="https://www.linkedin.com/pulse/adicionar-usu%C3%A1rio-ao-grupo-local-do-windows-11-usando-thiago-guirotto-nlyzf/" class="link-card" target="_blank">
+                        <div class="link-favicon">👤</div>
+                        <div class="link-info">
+                            <div class="link-title">Adicionar usuário ao grupo local do Windows 11 usando Microsoft Intune</div>
+                            <div class="link-url">linkedin.com</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=hBhNg1lVJwk" class="link-card" target="_blank">
+                        <div class="link-favicon">🔑</div>
+                        <div class="link-info">
+                            <div class="link-title">How to configure Windows LAPS in Microsoft Intune | Azure AD</div>
+                            <div class="link-url">youtube.com</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Power BI -->
+            <div class="subcategory">
+                <h3 class="subcategory-title">📊 Power BI</h3>
+                <div class="links-grid">
+                    <a href="https://community.fabric.microsoft.com/t5/Service/sorry-you-dont-have-access-to-publish-to-this-work-space-please/m-p/592923" class="link-card" target="_blank">
+                        <div class="link-favicon">🚫</div>
+                        <div class="link-info">
+                            <div class="link-title">Desculpe, você não tem acesso para publicar neste workspace</div>
+                            <div class="link-url">community.fabric.microsoft.com</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                    <a href="https://learn.microsoft.com/pt-br/power-bi/collaborate-share/service-share-dashboards" class="link-card" target="_blank">
+                        <div class="link-favicon">📤</div>
+                        <div class="link-info">
+                            <div class="link-title">Compartilhar os dashboards e os relatórios do Power BI com colegas de trabalho</div>
+                            <div class="link-url">learn.microsoft.com</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- SharePoint -->
+            <div class="subcategory">
+                <h3 class="subcategory-title">📂 SharePoint</h3>
+                <div class="links-grid">
+                    <a href="https://www.sharepointdiary.com/2021/10/how-to-delete-files-from-preservation-hold-library.html" class="link-card" target="_blank">
+                        <div class="link-favicon">🗂️</div>
+                        <div class="link-info">
+                            <div class="link-title">Como excluir arquivos da biblioteca de retenção para preservação no SharePoint Online</div>
+                            <div class="link-url">sharepointdiary.com</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tools Section -->
+        <section id="tools" class="category-section cat-tools">
+            <div class="category-header">
+                <div class="category-icon">🛠️</div>
+                <h2 class="category-title">Ferramentas & Utilitários</h2>
+                <span class="category-count">15+ links</span>
+            </div>
+            <div class="links-grid">
+                <a href="https://web.whatsapp.com/" class="link-card" target="_blank">
+                    <div class="link-favicon">💬</div>
+                    <div class="link-info">
+                        <div class="link-title">WhatsApp</div>
+                        <div class="link-url">web.whatsapp.com</div>
+                    </div>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="https://apwebapp.b2clogin.com/3a0f0b64-145e-4048-8d51-dbf4ce50271b/B2C_1A_SignUpSignIn_AOSP/oauth2/v2.0/authorize" class="link-card" target="_blank">
+                    <div class="link-favicon">🔧</div>
+                    <div class="link-info">
+                        <div class="link-title">Sign in</div>
+                        <div class="link-url">apwebapp.b2clogin.com</div>
+                    </div>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="https://skillupwithlevelup.com/login" class="link-card" target="_blank">
+                    <div class="link-favicon">🎓</div>
+                    <div class="link-info">
+                        <div class="link-title">LevelUp - Login</div>
+                        <div class="link-url">skillupwithlevelup.com</div>
+                    </div>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="https://skillupwithlevelup.com/course-detail/1810204" class="link-card" target="_blank">
+                    <div class="link-favicon">📚</div>
+                    <div class="link-info">
+                        <div class="link-title">MD-102: Endpoint Administrator</div>
+                        <div class="link-url">skillupwithlevelup.com</div>
+                    </div>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="https://mvp.microsoft.com/pt-BR/account/" class="link-card" target="_blank">
+                    <div class="link-favicon">🏆</div>
+                    <div class="link-info">
+                        <div class="link-title">MVP Portal - Microsoft</div>
+                        <div class="link-url">mvp.microsoft.com</div>
+                    </div>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="https://www.sp.senac.br/graduacao/bolsas-descontos-e-parcelamento/para-voce-que-ja-estuda-com-a-gente/programa-de-bolsas" class="link-card" target="_blank">
+                    <div class="link-favicon">🎓</div>
+                    <div class="link-info">
+                        <div class="link-title">Programa de bolsas - Senac São Paulo</div>
+                        <div class="link-url">sp.senac.br</div>
+                    </div>
+                    <span class="link-arrow">→</span>
+                </a>
+            </div>
+
+            <!-- Lighthouse -->
+            <div class="subcategory">
+                <h3 class="subcategory-title">🏠 Microsoft 365 Lighthouse</h3>
+                <div class="links-grid">
+                    <a href="https://cloudpartners.transform.microsoft.com/partner-gtm/csp/m365-lighthouse" class="link-card" target="_blank">
+                        <div class="link-favicon">💼</div>
+                        <div class="link-info">
+                            <div class="link-title">Trabalho Moderno para Parceiros - Microsoft 365 Lighthouse</div>
+                            <div class="link-url">cloudpartners.transform.microsoft.com</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                    <a href="https://learn.microsoft.com/pt-br/microsoft-365/lighthouse/m365-lighthouse-sign-up" class="link-card" target="_blank">
+                        <div class="link-favicon">📝</div>
+                        <div class="link-info">
+                            <div class="link-title">Inscrever-se no Microsoft 365 Lighthouse</div>
+                            <div class="link-url">learn.microsoft.com</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                    <a href="https://learn.microsoft.com/pt-br/microsoft-365/lighthouse/m365-lighthouse-requirements" class="link-card" target="_blank">
+                        <div class="link-favicon">📋</div>
+                        <div class="link-info">
+                            <div class="link-title">Requisitos para Microsoft 365 Lighthouse</div>
+                            <div class="link-url">learn.microsoft.com</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- BitTitan -->
+            <div class="subcategory">
+                <h3 class="subcategory-title">🔄 BitTitan</h3>
+                <div class="links-grid">
+                    <a href="https://help.bittitan.com/hc/en-us/articles/360053641014-Google-Drive-Migrations-FAQ" class="link-card" target="_blank">
+                        <div class="link-favicon">❓</div>
+                        <div class="link-info">
+                            <div class="link-title">Perguntas frequentes sobre migrações do Google Drive – BitTitan</div>
+                            <div class="link-url">help.bittitan.com</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                    <a href="https://help.bittitan.com/hc/en-us/articles/4402929511451-Google-Drive-to-OneDrive-Migration-Guide-Migrate-Versions-and-Metadata" class="link-card" target="_blank">
+                        <div class="link-favicon">📖</div>
+                        <div class="link-info">
+                            <div class="link-title">Guia de migração do Google Drive para o OneDrive (migrar versões e metadados)</div>
+                            <div class="link-url">help.bittitan.com</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Intune Rules -->
+            <div class="subcategory">
+                <h3 class="subcategory-title">📱 Intune - Regras</h3>
+                <div class="links-grid">
+                    <a href="https://cloudinfra.net/force-lock-screen-after-user-inactivity-using-intune/" class="link-card" target="_blank">
+                        <div class="link-favicon">🔒</div>
+                        <div class="link-info">
+                            <div class="link-title">Force Lock Screen After User Inactivity Using Intune</div>
+                            <div class="link-url">cloudinfra.net</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                    <a href="https://jornada365.cloud/zero-trust-bloqueie-o-acesso-corporativo-em-dispositivos-pessoais-com-conditional-access/" class="link-card" target="_blank">
+                        <div class="link-favicon">🛡️</div>
+                        <div class="link-info">
+                            <div class="link-title">Zero Trust - Bloqueie o Acesso Corporativo em Dispositivos Pessoais com Conditional Access</div>
+                            <div class="link-url">jornada365.cloud</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                    <a href="https://jornada365.cloud/intune-criando-e-gerenciando-administrador-local-pelo-windows-laps/" class="link-card" target="_blank">
+                        <div class="link-favicon">🔑</div>
+                        <div class="link-info">
+                            <div class="link-title">Intune - Criando e Gerenciando Administrador Local pelo Windows LAPS</div>
+                            <div class="link-url">jornada365.cloud</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                    <a href="https://jornada365.cloud/microsoft-intune-wallpaper-e-lockscreen-windows-pro/" class="link-card" target="_blank">
+                        <div class="link-favicon">🖼️</div>
+                        <div class="link-info">
+                            <div class="link-title">Microsoft Intune - Wallpaper e Lockscreen Windows Pro</div>
+                            <div class="link-url">jornada365.cloud</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                    <a href="https://myronhelgering.com/block-access-with-conditional-access-for-unmanaged-devices/" class="link-card" target="_blank">
+                        <div class="link-favicon">🚫</div>
+                        <div class="link-info">
+                            <div class="link-title">Bloquear acesso com acesso condicional para dispositivos não gerenciados</div>
+                            <div class="link-url">myronhelgering.com</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Migration Section -->
+        <section id="migration" class="category-section cat-migration">
+            <div class="category-header">
+                <div class="category-icon">🚀</div>
+                <h2 class="category-title">Migração 365</h2>
+                <span class="category-count">20+ links</span>
+            </div>
+            <div class="links-grid">
+                <a href="https://www.youtube.com/watch?v=1xryQJAspaM" class="link-card" target="_blank">
+                    <div class="link-favicon">📧</div>
+                    <div class="link-info">
+                        <div class="link-title">Como migrar e-mail de qualquer servidor IMAP para o Microsoft 365</div>
+                        <div class="link-url">youtube.com</div>
+                    </div>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="https://www.youtube.com/watch?v=TFzcGxp58rc" class="link-card" target="_blank">
+                    <div class="link-favicon">📧</div>
+                    <div class="link-info">
+                        <div class="link-title">Como migrar emails LocaWeb para Microsoft 365</div>
+                        <div class="link-url">youtube.com</div>
+                    </div>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="https://www.youtube.com/watch?v=bmBybndABjE" class="link-card" target="_blank">
+                    <div class="link-favicon">📂</div>
+                    <div class="link-info">
+                        <div class="link-title">Como migrar seu File Server para o SharePoint Online</div>
+                        <div class="link-url">youtube.com</div>
+                    </div>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="https://www.youtube.com/watch?v=Fcw23XJr3dU" class="link-card" target="_blank">
+                    <div class="link-favicon">📧</div>
+                    <div class="link-info">
+                        <div class="link-title">Como migrar e-mails do Google Workspace para o Microsoft 365 e criar um ambiente de coexistência</div>
+                        <div class="link-url">youtube.com</div>
+                    </div>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="https://www.youtube.com/watch?v=sk26IsziPKs" class="link-card" target="_blank">
+                    <div class="link-favicon">🔄</div>
+                    <div class="link-info">
+                        <div class="link-title">Migração Ambiente Google Workspace para Microsoft 365</div>
+                        <div class="link-url">youtube.com</div>
+                    </div>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="https://www.youtube.com/watch?v=BjMrYwTgjp0" class="link-card" target="_blank">
+                    <div class="link-favicon">🔄</div>
+                    <div class="link-info">
+                        <div class="link-title">Microsoft 365 Tenant to Tenant Migration For Free - Native Office 365 Cross Tenant Migration Method</div>
+                        <div class="link-url">youtube.com</div>
+                    </div>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="https://www.youtube.com/watch?v=5uAAgBbrosg" class="link-card" target="_blank">
+                    <div class="link-favicon">🔄</div>
+                    <div class="link-info">
+                        <div class="link-title">Microsoft Tenant to Tenant Migration | Cross Tenant Migration - Part 1</div>
+                        <div class="link-url">youtube.com</div>
+                    </div>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="https://www.youtube.com/watch?v=sJ-5URX19d4" class="link-card" target="_blank">
+                    <div class="link-favicon">🔒</div>
+                    <div class="link-info">
+                        <div class="link-title">Microsoft 365 SPF, DKIM and DMARC - Improve Your Email Security!</div>
+                        <div class="link-url">youtube.com</div>
+                    </div>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="https://www.youtube.com/watch?v=s23JHcbjmyQ" class="link-card" target="_blank">
+                    <div class="link-favicon">📥</div>
+                    <div class="link-info">
+                        <div class="link-title">Import PST to Microsoft 365 for Free | Network Upload Method</div>
+                        <div class="link-url">youtube.com</div>
+                    </div>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="https://learn.microsoft.com/pt-br/microsoft-365/admin/get-help-with-domains/change-nameservers-at-any-domain-registrar" class="link-card" target="_blank">
+                    <div class="link-favicon">🌐</div>
+                    <div class="link-info">
+                        <div class="link-title">Alterar servidores de nomes para configurar o Microsoft 365 com qualquer entidade de registo</div>
+                        <div class="link-url">learn.microsoft.com</div>
+                    </div>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="https://www.youtube.com/watch?v=Ad3zE9yqDXM" class="link-card" target="_blank">
+                    <div class="link-favicon">📱</div>
+                    <div class="link-info">
+                        <div class="link-title">Enroll a Windows device automatically using Group Policy | Microsoft Intune training</div>
+                        <div class="link-url">youtube.com</div>
+                    </div>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="https://www.youtube.com/watch?v=IuZmiA-jFW0" class="link-card" target="_blank">
+                    <div class="link-favicon">🔑</div>
+                    <div class="link-info">
+                        <div class="link-title">Como configurar Write-back SSPR para ambientes híbridos no Microsoft 365</div>
+                        <div class="link-url">youtube.com</div>
+                    </div>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="https://jackstromberg.com/2018/08/how-to-hide-users-from-the-gal-in-office-365-synchronized-from-on-premises/" class="link-card" target="_blank">
+                    <div class="link-favicon">👻</div>
+                    <div class="link-info">
+                        <div class="link-title">Como ocultar usuários da GAL no Office 365 sincronizados do local</div>
+                        <div class="link-url">jackstromberg.com</div>
+                    </div>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="https://teams.handsontek.net/2025/09/24/enabling-file-attachments-teams-chats-external-users-matters/" class="link-card" target="_blank">
+                    <div class="link-favicon">📎</div>
+                    <div class="link-info">
+                        <div class="link-title">Por que ativar anexos de arquivos em chats do Teams com usuários externos é importante</div>
+                        <div class="link-url">teams.handsontek.net</div>
+                    </div>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="https://learn.microsoft.com/en-us/microsoft-365/enterprise/set-up-multi-tenant-org" class="link-card" target="_blank">
+                    <div class="link-favicon">🏢</div>
+                    <div class="link-info">
+                        <div class="link-title">Set up a multitenant org in Microsoft 365</div>
+                        <div class="link-url">learn.microsoft.com</div>
+                    </div>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="https://learn.microsoft.com/en-us/microsoft-365/enterprise/plan-multi-tenant-org-overview" class="link-card" target="_blank">
+                    <div class="link-favicon">📋</div>
+                    <div class="link-info">
+                        <div class="link-title">Planeje para organizações multitenant no Microsoft 365</div>
+                        <div class="link-url">learn.microsoft.com</div>
+                    </div>
+                    <span class="link-arrow">→</span>
+                </a>
+            </div>
+
+            <!-- Araguaia -->
+            <div class="subcategory">
+                <h3 class="subcategory-title">🌊 Araguaia</h3>
+                <div class="links-grid">
+                    <a href="https://www.reddit.com/r/microsoft365/comments/1m0pjsz/restrict_sharepoint_rest_api/" class="link-card" target="_blank">
+                        <div class="link-favicon">🔒</div>
+                        <div class="link-info">
+                            <div class="link-title">Restringir a API REST do Sharepoint - Reddit</div>
+                            <div class="link-url">reddit.com</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                    <a href="https://learn.microsoft.com/pt-br/microsoftteams/communicate-with-users-from-other-organizations" class="link-card" target="_blank">
+                        <div class="link-favicon">💬</div>
+                        <div class="link-info">
+                            <div class="link-title">Use o acesso para convidado e o acesso externo para colaborar com pessoas de fora da sua organização</div>
+                            <div class="link-url">learn.microsoft.com</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=lShnC_ptRQw" class="link-card" target="_blank">
+                        <div class="link-favicon">⚡</div>
+                        <div class="link-info">
+                            <div class="link-title">Como enviar solicitações HTTP para o SharePoint API REST passo passo com Power Automate</div>
+                            <div class="link-url">youtube.com</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Agille -->
+            <div class="subcategory">
+                <h3 class="subcategory-title">🏃 Agille</h3>
+                <div class="links-grid">
+                    <a href="https://learn.microsoft.com/en-us/answers/questions/703022/you-need-permission-to-access-this-item-microsoft" class="link-card" target="_blank">
+                        <div class="link-favicon">🔐</div>
+                        <div class="link-info">
+                            <div class="link-title">Você precisa de permissão para acessar este item - Microsoft Teams</div>
+                            <div class="link-url">learn.microsoft.com</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                    <a href="https://learn.microsoft.com/en-us/sharepoint/remove-users" class="link-card" target="_blank">
+                        <div class="link-favicon">👤</div>
+                        <div class="link-info">
+                            <div class="link-title">Remover usuários do SharePoint - SharePoint no Microsoft 365int - SharePoint no Microsoft 365</div>
+                            <div class="link-url">learn.microsoft.com</div>
+                        </div>
+                        <span class="link-arrow">→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>🚀 Portal de Favoritos | Atualizado em 15 de Abril de 2026</p>
+        <p style="margin-top: 0.5rem; font-size: 0.8rem;">Feito com ❤️ para organizar seus links</p>
+    </footer>
+
+    <script>
+        // Search functionality
+        const searchInput = document.getElementById('searchInput');
+        
+        searchInput.addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const allCards = document.querySelectorAll('.link-card');
+            const allSections = document.querySelectorAll('.category-section');
+            const allSubcategories = document.querySelectorAll('.subcategory');
+
+            allCards.forEach(card => {
+                const title = card.querySelector('.link-title').textContent.toLowerCase();
+                const url = card.querySelector('.link-url').textContent.toLowerCase();
+                
+                if (title.includes(searchTerm) || url.includes(searchTerm)) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+
+            // Hide empty subcategories
+            allSubcategories.forEach(subcategory => {
+                const visibleCards = subcategory.querySelectorAll('.link-card:not(.hidden)');
+                if (visibleCards.length === 0) {
+                    subcategory.classList.add('hidden');
+                } else {
+                    subcategory.classList.remove('hidden');
+                }
+            });
+
+            // Hide empty sections
+            allSections.forEach(section => {
+                const visibleCards = section.querySelectorAll('.link-card:not(.hidden)');
+                if (visibleCards.length === 0) {
+                    section.classList.add('hidden');
+                } else {
+                    section.classList.remove('hidden');
+                }
+            });
+        });
+
+        // Smooth scroll for nav links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
